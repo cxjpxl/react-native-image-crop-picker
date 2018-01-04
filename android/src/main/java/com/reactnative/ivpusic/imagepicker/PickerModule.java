@@ -52,9 +52,11 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
     private static final int CAMERA_PICKER_REQUEST = 61111;
     private static final String E_ACTIVITY_DOES_NOT_EXIST = "E_ACTIVITY_DOES_NOT_EXIST";
 
+	private static final String E_PICKER_CANCELLED_CROP  = "CROP_PICKER_CANCELLED";
     private static final String E_PICKER_CANCELLED_KEY = "E_PICKER_CANCELLED";
     private static final String E_PICKER_CANCELLED_MSG = "User cancelled image selection";
 
+	
     private static final String E_CALLBACK_ERROR = "E_CALLBACK_ERROR";
     private static final String E_FAILED_TO_SHOW_PICKER = "E_FAILED_TO_SHOW_PICKER";
     private static final String E_FAILED_TO_OPEN_CAMERA = "E_FAILED_TO_OPEN_CAMERA";
@@ -667,7 +669,7 @@ class PickerModule extends ReactContextBaseJavaModule implements ActivityEventLi
                 resultCollector.notifyProblem(E_NO_IMAGE_DATA_FOUND, "Cannot find image data");
             }
         } else {
-            resultCollector.notifyProblem(E_PICKER_CANCELLED_KEY, E_PICKER_CANCELLED_MSG);
+            resultCollector.notifyProblem(E_PICKER_CANCELLED_CROP, E_PICKER_CANCELLED_MSG);
         }
     }
 
